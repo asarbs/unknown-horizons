@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -80,9 +80,6 @@ class Island(BuildingOwner, WorldObject):
 		"""
 		super(Island, self).__init__(worldid=island_id)
 
-		if False:
-			from horizons.session import Session
-			assert isinstance(session, Session)
 		self.session = session
 
 		self.terrain_cache = None

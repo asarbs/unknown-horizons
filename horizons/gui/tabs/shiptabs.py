@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -115,7 +115,7 @@ class PlayerShipOverviewTab(ShipOverviewTab):
 	def _refresh_combat(self): # no combat
 		def click_on_cannons(button):
 			button.button.capture(Callback(
-			  self.instance.session.gui.show_popup,
+			  self.instance.session.ingame_gui.show_popup,
 			  _("Cannot equip trade ship with weapons"),
 			  _("It is not possible to equip a trade ship with weapons.")
 			))

@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -45,7 +45,7 @@ class BoatbuilderTab(_BoatbuilderOverviewTab):
 	widget = 'boatbuilder.xml'
 	helptext = _("Boat builder overview")
 
-	SHIP_THUMBNAIL = "content/gui/icons/units/thumbnails/{type_id}.png"
+	SHIP_THUMBNAIL = "content/gui/icons/thumbnails/{type_id}.png"
 	SHIP_PREVIEW_IMG = "content/gui/images/objects/ships/116/{type_id}.png"
 
 	def show(self):
@@ -90,7 +90,8 @@ class BoatbuilderTab(_BoatbuilderOverviewTab):
 			queue_container.removeAllChildren()
 			for place_in_queue, unit_type in enumerate(queue):
 				image = self.__class__.SHIP_THUMBNAIL.format(type_id=unit_type)
-				helptext = _(u"{ship} (place in queue: {place})") #xgettext:python-format
+				#xgettext:python-format
+				helptext = _("{ship} (place in queue: {place})")
 				helptext.format(ship=self.instance.session.db.get_unit_type_name(unit_type),
 				                place=place_in_queue+1)
 				# people don't count properly, always starting at 1..
@@ -204,12 +205,10 @@ class BoatbuilderSelectTab(_BoatbuilderOverviewTab):
 
 		widget.addChild(button)
 
-		#TODO since this code uses the boat builder as producer, the
-		# gold cost of ships in consumed res is always 0 since it is
-		# paid from player inventory, not from the boat builder one.
-		production = self.producer.create_production(prodline)
+		# Get production line info
+		production = self.producer.create_production_line(prodline)
 		# consumed == negative, reverse to sort in *ascending* order:
-		costs = sorted(production.get_consumed_resources().iteritems(), key=itemgetter(1))
+		costs = sorted(production.consumed_res.iteritems(), key=itemgetter(1))
 		for i, (res, amount) in enumerate(costs):
 			xoffset = 103 + (i  % 2) * 55
 			yoffset =  20 + (i // 2) * 20

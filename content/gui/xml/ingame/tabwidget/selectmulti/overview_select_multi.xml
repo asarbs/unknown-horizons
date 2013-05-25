@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Overview tab -->
-<TabContainer name="overview_select_multi">
+<TabContainer name="overview_select_multi" headline="Hi">
 
 	<Container name="selected_units" position="0,5" size="600,400">
 		<VBox>
@@ -12,4 +12,4 @@
 
 	<Container position="0,225" name="stance" />
 
-</Container>
+</TabContainer>

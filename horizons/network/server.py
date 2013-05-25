@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -360,6 +360,8 @@ class Server(object):
 		logging.debug("[LIST]")
 		gameslist = packets.server.data_gameslist()
 		for _game in self.games:
+			if _game.creator.protocol != player.protocol:
+				continue
 			if not _game.is_open():
 				continue
 			if _game.is_full():

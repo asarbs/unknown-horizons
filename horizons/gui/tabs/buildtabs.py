@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -135,6 +135,16 @@ class BuildTab(TabInterface):
 
 			building = Entities.buildings[building_id]
 			button.helptext = self.session.db.get_building_tooltip(building_id)
+
+			# Add necessary resources to tooltip
+			# [br] means newline
+			button.helptext += u'[br]' + _('Resources needed:') + u'[br]'
+			for resource_id, amount_needed in sorted(building.costs.items()):
+				resource_name = self.session.db.get_res_name(resource_id)
+				button.helptext += u'[br]'
+				#xgettext:python-format
+				# You usually do not need to change anything here when translating
+				button.helptext += _('{resource}: {amount}').format(resource=resource_name, amount=amount_needed)
 
 			enough_res = False # don't show building by default
 			if settlement is not None: # settlement is None when the mouse has left the settlement

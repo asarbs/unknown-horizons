@@ -24,4 +24,6 @@
 		<ImageButton position="80,40" name="water" />
 	</AutoResizeContainer>
 
+	<Label text="(right click to stop)" name="cursor_hint" position="5,185" comment="relayout me after merge" />
+
 </TabContainer>

@@ -17,6 +17,7 @@
 * RainCT (Siegfried Gevatter)
 * spq (Kristoffer Janke)
 * squiddy (Reiner Gerecke)
+* ThePawnBreak (Mocanu Cristian-Alexandru)
 * totycro (Bernhard Mallinger)
 * tuempl (Harald Demel)
 * yonibear (Jonathan Sieber)
@@ -30,6 +31,7 @@
 
 #### Sound and Music Artists
 * draikon (Sebastian Ahlen)
+* Matthew Pablo
 * novatlan (Tobias Escher)
 * ThomasD (Thomas Davey)
 
@@ -56,7 +58,7 @@
 * MSSSSM (Several improvements)
 * soeb (Translation enhancements)
 
-#### 2010 
+#### 2010
 * Afrit (Resource tree)
 * cubathy (Language bugfix)
 * dario (Savegame versioning)
@@ -87,6 +89,9 @@
 
 
 ## Translators
+
+#### Hosting Weblate
+* Michal Čihař (nijel)
 
 #### Bulgarian
 * balward
@@ -124,6 +129,9 @@
 #### Estonian
 * Mihkel Rämmel (RM87)
 * Üllar Lainväe (ussikene)
+
+#### Finnish
+* Aleksi Kinnunen
 
 #### French
 * Antoine Pernot (mumuxe)
@@ -207,7 +215,6 @@
 * Andrej Žnidaršič (andrejz)
 
 #### Swedish
-* Aleksi Kinnunen (alluk.)
 * Nagrim
 * pilen
 
@@ -232,16 +239,26 @@
 ## Special Thanks ##
 
 #### Thanks, all of you are awesome!
-* Alexia and Widelands team (http://widelands.org)
+* Alexia and the Widelands team
+  * (http://widelands.org)
 * BartK and www.OpenGameArt.org
 * Dreimer (Daniel Reimer)
 * hoehrer (Werner Hoehrer)
 * Ivanovic (Nils Kneuper)
+* nijel (Michal Čihař)
 * Lamoot (Matjaz Lamut)
 * LinuxDonald (Thomas Kowaliczek)
 * mattn (Martin Gerhardry)
 * mvBarracuda (Martin Vohland)
-* Reiner Prokein (http://reinerstileset.4players.de)
-* The Battle for Wesnoth team (http://wesnoth.org)
+* OpenClipArt (http://openclipart.org)
+* Reiner Prokein
+  * (http://reinerstileset.4players.de)
+* The Battle for Wesnoth team
+  * (http://wesnoth.org)
 * The whole FIFE team (http://fifengine.net)
-* www.OpenClipArt.org
+
+- - - - -
+
+#### Portfolio Sites
+* Matthew Pablo: http://matthewpablo.com/
+* novatlan: http://novatlan-sound.de/

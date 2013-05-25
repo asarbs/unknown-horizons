@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -18,6 +18,8 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 # ###################################################
+
+from functools import partial
 
 from fife.extensions.pychan.widgets import Label
 
@@ -63,6 +65,8 @@ class AccountTab(MainSquareTab):
 		self.widget.mapEvents({
 		  'show_production_overview/mouseClicked' : self.show_production_overview
 		  })
+		# path = 'icons/widgets/cityinfo/settlement_%s' % self.settlement.owner.color.name
+		# self.widget.child_finder('show_production_overview').path = path
 
 		# FIXME having to access the WindowManager this way is pretty ugly
 		self._windows = self.instance.session.ingame_gui.windows
@@ -206,12 +210,11 @@ class MainSquareSettlerLevelTab(MainSquareTab):
 
 		sad = self.instance.session.db.get_settler_happiness_decrease_limit()
 		happy = self.instance.session.db.get_settler_happiness_increase_requirement()
-		self.widget.child_finder('sad_amount').text = unicode(
-			self.settlement.get_residentials_of_lvl_for_happiness(self.__class__.LEVEL, max_happiness=sad))
-		self.widget.child_finder('avg_amount').text = unicode(
-			self.settlement.get_residentials_of_lvl_for_happiness(self.__class__.LEVEL, sad, happy))
-		self.widget.child_finder('happy_amount').text = unicode(
-			self.settlement.get_residentials_of_lvl_for_happiness(self.__class__.LEVEL, happy))
+		inhabitants = partial(self.settlement.get_residentials_of_lvl_for_happiness,
+		                      self.__class__.LEVEL)
+		self.widget.child_finder('sad_amount').text = unicode(inhabitants(max_happiness=sad))
+		self.widget.child_finder('avg_amount').text = unicode(inhabitants(sad, happy))
+		self.widget.child_finder('happy_amount').text = unicode(inhabitants(happy))
 
 		# refresh the summary
 		self.widget.child_finder('house_count').text = unicode(houses)
@@ -222,6 +225,7 @@ class MainSquareSettlerLevelTab(MainSquareTab):
 
 	def toggle_upgrades(self):
 		SetSettlementUpgradePermissions(self.settlement, self.__class__.LEVEL, not self.settlement.upgrade_permissions[self.__class__.LEVEL]).execute(self.settlement.session)
+
 
 class MainSquareSailorsTab(MainSquareSettlerLevelTab):
 	LEVEL = TIER.SAILORS

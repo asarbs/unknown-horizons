@@ -1,5 +1,5 @@
 # ###################################################
-# Copyright (C) 2013 The Unknown Horizons Team
+# Copyright (C) 2008-2013 The Unknown Horizons Team
 # team@unknown-horizons.org
 # This file is part of Unknown Horizons.
 #
@@ -46,12 +46,13 @@ class LogBook(PickBeltWidget, Window):
 
 	widget_xml = 'captains_log.xml'
 	page_pos = (170, 38)
-	sections = (('logbook', _(u'Logbook')),
-	            ('statistics', _(u'Statistics')),
-	            ('chat_overview', _(u'Chat')))
+	sections = (('logbook', _('Logbook')),
+	            ('statistics', _('Statistics')),
+	            ('chat_overview', _('Chat')))
 
 	def __init__(self, session, windows):
 		self.statistics_index = [i for i, sec in self.sections].index('statistics')
+		self.logbook_index = [i for i, sec in self.sections].index('logbook')
 		self._page_ids = {} # dict mapping self._cur_entry to message.msgcount
 		super(LogBook, self).__init__()
 		self.session = session
@@ -268,6 +269,10 @@ class LogBook(PickBeltWidget, Window):
 			"""
 			return [list(l[1]) for l in groupby(parameters, lambda x: x != ['Pagebreak']) if l[0]]
 
+		# If a scenario goal has been completed, remove the corresponding message
+		for message in self._displayed_messages:
+			self.session.ingame_gui.message_widget.remove(message)
+
 		self._displayed_messages = [] # Reset displayed messages
 		for parameter_list in _split_on_pagebreaks(parameters):
 			self._parameters.append(parameter_list)
@@ -284,6 +289,7 @@ class LogBook(PickBeltWidget, Window):
 		if show_logbook and hasattr(self, "_gui"):
 			self._redraw_captainslog()
 			self._windows.show(self)
+			self.show_logbookwidget()
 
 	def clear(self):
 		"""Remove all entries"""
@@ -310,6 +316,11 @@ class LogBook(PickBeltWidget, Window):
 		self._cur_entry = new_cur
 		AmbientSoundComponent.play_special('flippage')
 		self._redraw_captainslog()
+
+	def show_logbookwidget(self):
+		"""Shows logbook with Logbook page selected"""
+		if self.current_mode != self.logbook_index:
+			self.update_view(self.logbook_index)
 
 ########
 #        STATISTICS  SUBWIDGET
