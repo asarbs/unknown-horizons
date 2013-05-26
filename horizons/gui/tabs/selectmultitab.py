@@ -36,6 +36,7 @@ from horizons.constants import UNITS
 from horizons.util.loaders.actionsetloader import ActionSetLoader
 
 
+
 class SelectMultiTab(TabInterface):
 	"""
 	Tab shown when multiple units are selected
@@ -47,8 +48,8 @@ class SelectMultiTab(TabInterface):
 	max_row_entry_number = 3
 	max_column_entry_number = 4
 
-	def __init__(self, session=None):
-		self.session = session
+	def __init__(self, selected_instances=None):
+		self.selected_instances = selected_instances or []
 
 		# keep track of units that have stance
 		self.stance_unit_number = 0
@@ -57,7 +58,7 @@ class SelectMultiTab(TabInterface):
 		# keep track of number of instances per type
 		self.type_number = defaultdict(int)
 
-		for i in self.session.selected_instances:
+		for i in self.selected_instances:
 			if hasattr(i, 'stance'):
 				self.stance_unit_number += 1
 			self.instances.append(i)
