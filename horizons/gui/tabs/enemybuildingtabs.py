@@ -21,6 +21,7 @@
 # ###################################################
 
 from horizons.gui.tabs import OverviewTab
+from horizons.i18n import _lazy
 from horizons.component.namedcomponent import NamedComponent
 from horizons.component.storagecomponent import StorageComponent
 from horizons.component.tradepostcomponent import TradePostComponent
@@ -32,7 +33,7 @@ class EnemyBuildingOverviewTab(OverviewTab):
 
 class EnemyWarehouseOverviewTab(OverviewTab):
 	widget = 'overview_enemywarehouse.xml'
-	helptext = _("Warehouse overview")
+	helptext = _lazy("Warehouse overview")
 
 	def refresh(self):
 		settlement = self.instance.settlement

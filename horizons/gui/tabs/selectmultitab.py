@@ -27,6 +27,7 @@ from fife.extensions.pychan.widgets import Icon
 from horizons.util.python.callback import Callback
 from horizons.gui.tabs.tabinterface import TabInterface
 from horizons.gui.util import load_uh_widget
+from horizons.i18n import _lazy
 from horizons.scheduler import Scheduler
 from horizons.command.unit import SetStance
 from horizons.component.healthcomponent import HealthComponent
@@ -43,7 +44,7 @@ class SelectMultiTab(TabInterface):
 	"""
 	widget = 'overview_select_multi.xml'
 	icon_path = 'icons/tabwidget/common/inventory'
-	helptext = _("Selected Units")
+	helptext = _lazy("Selected Units")
 
 	max_row_entry_number = 3
 	max_column_entry_number = 4

@@ -23,12 +23,13 @@
 from horizons.gui.tabs.tabinterface import TabInterface
 
 from horizons.component.namedcomponent import NamedComponent
+from horizons.i18n import _lazy
 
 
 class OverviewTab(TabInterface):
 	widget = 'overviewtab.xml'
 	icon_path = 'icons/tabwidget/common/building_overview'
-	helptext = _("Overview")
+	helptext = _lazy("Overview")
 
 	show_emblem = False
 	has_stance = False
@@ -101,7 +102,7 @@ class OverviewTab(TabInterface):
 
 class GroundUnitOverviewTab(OverviewTab):
 	widget = 'overview_groundunit.xml'
-	helptext = _("Unit overview")
+	helptext = _lazy("Unit overview")
 
 	show_emblem = True
 	has_stance = True

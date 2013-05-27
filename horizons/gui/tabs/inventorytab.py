@@ -22,13 +22,14 @@
 from fife.extensions.pychan.widgets import HBox, Icon
 
 from horizons.gui.tabs.tabinterface import TabInterface
+from horizons.i18n import _lazy
 from horizons.extscheduler import ExtScheduler
 from horizons.component.storagecomponent import StorageComponent
 
 class InventoryTab(TabInterface):
 	widget = 'island_inventory.xml'
 	icon_path = 'icons/tabwidget/common/inventory'
-	helptext = _("Settlement inventory")
+	helptext = _lazy("Settlement inventory")
 
 	lazy_loading = True
 

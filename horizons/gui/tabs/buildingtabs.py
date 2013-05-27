@@ -21,6 +21,7 @@
 # ###################################################
 
 from horizons.gui.tabs import OverviewTab
+from horizons.i18n import _lazy
 from horizons.util.loaders.actionsetloader import ActionSetLoader
 from horizons.component.namedcomponent import NamedComponent
 from horizons.component.storagecomponent import StorageComponent
@@ -29,13 +30,13 @@ from horizons.component.depositcomponent import DepositComponent
 
 class TowerOverviewTab(OverviewTab): # defensive tower
 	widget = 'overview_tower.xml'
-	helptext = _("Tower overview")
+	helptext = _lazy("Tower overview")
 	show_emblem = True
 
 
 class SignalFireOverviewTab(OverviewTab):
 	widget = 'overview_signalfire.xml'
-	helptext = _("Overview")
+	helptext = _lazy("Overview")
 
 	def init_widget(self):
 		super(SignalFireOverviewTab, self).init_widget()

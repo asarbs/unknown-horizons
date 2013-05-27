@@ -28,6 +28,7 @@ from horizons.command.production import AddProduction, RemoveFromQueue, CancelCu
 from horizons.gui.tabs import OverviewTab
 from horizons.gui.util import create_resource_icon
 from horizons.gui.widgets.imagebutton import OkButton, CancelButton
+from horizons.i18n import _lazy
 from horizons.scheduler import Scheduler
 from horizons.util.python.callback import Callback
 from horizons.constants import PRODUCTIONLINES, RES, UNITS, GAME_SPEED
@@ -43,7 +44,7 @@ class _BoatbuilderOverviewTab(OverviewTab):
 
 class BoatbuilderTab(_BoatbuilderOverviewTab):
 	widget = 'boatbuilder.xml'
-	helptext = _("Boat builder overview")
+	helptext = _lazy("Boat builder overview")
 
 	SHIP_THUMBNAIL = "content/gui/icons/thumbnails/{type_id}.png"
 	SHIP_PREVIEW_IMG = "content/gui/images/objects/ships/116/{type_id}.png"
@@ -233,7 +234,7 @@ class BoatbuilderSelectTab(_BoatbuilderOverviewTab):
 
 class BoatbuilderFisherTab(BoatbuilderSelectTab):
 	icon_path = 'icons/tabwidget/boatbuilder/fisher'
-	helptext = _("Fisher boats")
+	helptext = _lazy("Fisher boats")
 
 	ships = [
 		#(UNITS.FISHER_BOAT, PRODUCTIONLINES.FISHING_BOAT),
@@ -245,7 +246,7 @@ class BoatbuilderFisherTab(BoatbuilderSelectTab):
 
 class BoatbuilderTradeTab(BoatbuilderSelectTab):
 	icon_path = 'icons/tabwidget/boatbuilder/trade'
-	helptext = _("Trade boats")
+	helptext = _lazy("Trade boats")
 
 	ships = [
 		(UNITS.HUKER_SHIP, PRODUCTIONLINES.HUKER),
@@ -257,7 +258,7 @@ class BoatbuilderTradeTab(BoatbuilderSelectTab):
 
 class BoatbuilderWar1Tab(BoatbuilderSelectTab):
 	icon_path = 'icons/tabwidget/boatbuilder/war1'
-	helptext = _("War boats")
+	helptext = _lazy("War boats")
 
 	ships = [
 		#(UNITS.SMALL_GUNBOAT, PRODUCTIONLINES.SMALL_GUNBOAT),
@@ -269,7 +270,7 @@ class BoatbuilderWar1Tab(BoatbuilderSelectTab):
 
 class BoatbuilderWar2Tab(BoatbuilderSelectTab):
 	icon_path = 'icons/tabwidget/boatbuilder/war2'
-	helptext = _("War ships")
+	helptext = _lazy("War ships")
 
 	ships = [
 		#(UNITS.GALLEY, PRODUCTIONLINES.GALLEY),
@@ -287,7 +288,7 @@ class BoatbuilderWar2Tab(BoatbuilderSelectTab):
 
 class BoatbuilderConfirmTab(_BoatbuilderOverviewTab):
 	widget = 'boatbuilder_confirm.xml'
-	helptext = _("Confirm order")
+	helptext = _lazy("Confirm order")
 
 	def init_widget(self):
 		super(BoatbuilderConfirmTab, self).init_widget()

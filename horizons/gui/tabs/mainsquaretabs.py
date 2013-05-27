@@ -27,6 +27,7 @@ from horizons.gui.widgets.productionoverview import ProductionOverview
 from horizons.gui.tabs import OverviewTab
 from horizons.gui.tabs.residentialtabs import setup_tax_slider
 
+from horizons.i18n import _lazy
 from horizons.util.python.callback import Callback
 from horizons.messaging import UpgradePermissionsChanged
 from horizons.command.uioptions import SetSettlementUpgradePermissions
@@ -59,7 +60,7 @@ class MainSquareTab(OverviewTab):
 class AccountTab(MainSquareTab):
 	"""Display basic income and expenses of a settlement"""
 	widget = 'tab_account.xml'
-	helptext = _("Account")
+	helptext = _lazy("Account")
 	show_emblem = True
 
 	def init_widget(self):
@@ -102,7 +103,7 @@ class AccountTab(MainSquareTab):
 
 
 class MainSquareOverviewTab(AccountTab):
-	helptext = _('Main square overview')
+	helptext = _lazy('Main square overview')
 	show_emblem = True
 
 	def init_widget(self):

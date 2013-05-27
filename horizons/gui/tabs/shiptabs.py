@@ -27,6 +27,7 @@ from horizons.command.uioptions import EquipWeaponFromInventory, UnequipWeaponTo
 from horizons.entities import Entities
 from horizons.gui.tabs import OverviewTab, TradeTab
 from horizons.gui.widgets.routeconfig import RouteConfig
+from horizons.i18n import _lazy
 from horizons.util.python.callback import Callback
 from horizons.component.storagecomponent import StorageComponent
 from horizons.component.selectablecomponent import SelectableComponent
@@ -34,7 +35,7 @@ from horizons.component.selectablecomponent import SelectableComponent
 
 class ShipOverviewTab(OverviewTab):
 	icon_path = 'icons/tabwidget/ship/ship_inv'
-	helptext = _("Ship overview")
+	helptext = _lazy("Ship overview")
 
 
 class TraderShipOverviewTab(ShipOverviewTab):

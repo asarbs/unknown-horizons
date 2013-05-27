@@ -31,6 +31,7 @@ from horizons.constants import GAME_SPEED, PRODUCTION
 from horizons.gui.tabs import OverviewTab
 from horizons.gui.util import load_uh_widget
 from horizons.gui.widgets.imagefillstatusbutton import ImageFillStatusButton
+from horizons.i18n import _lazy
 from horizons.scheduler import Scheduler
 from horizons.util.python.callback import Callback
 from horizons.util.pychananimation import PychanAnimation
@@ -40,7 +41,7 @@ from horizons.world.production.producer import Producer
 
 class ProductionOverviewTab(OverviewTab):
 	widget = 'overview_productionbuilding.xml'
-	helptext = _("Production overview")
+	helptext = _lazy("Production overview")
 	production_line_gui_xml = 'overview_productionline.xml'
 
 	ACTIVE_PRODUCTION_ANIM_DIR = "content/gui/images/animations/cogs/large"
@@ -231,7 +232,7 @@ class SmallProductionOverviewTab(ProductionOverviewTab):
 	Requires the building class using this tab to implement get_providers().
 	"""
 	widget = 'overview_farm.xml'
-	helptext = _("Production overview")
+	helptext = _lazy("Production overview")
 	production_line_gui_xml = "overview_farmproductionline.xml"
 
 	# the farm uses small buttons
