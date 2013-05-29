@@ -64,25 +64,25 @@ def set_translations():
 		(u'cursor_hint'                  , 'text'    ): _("(right click to stop)"),
 		(u'headline_brush_size'          , 'text'    ): _("Select brush size:"),
 		(u'headline_terrain'             , 'text'    ): _("Select terrain:"),
+		(u'editor_settings'              , 'headline'): _("Map editor"),
 		},
 
 	'buildtab.xml' : {
 		},
 
 	'buildtab_no_settlement.xml' : {
-		(u'headline'                     , 'text'    ): _("Game start"),
 		(u'howto_1_need_warehouse'       , 'text'    ): _("You need to found a settlement before you can construct buildings!"),
 		(u'howto_2_navigate_ship'        , 'text'    ): _("Select your ship and approach the coast via right-click."),
 		(u'howto_3_build_warehouse'      , 'text'    ): _("Afterwards, press the large button in the ship overview tab."),
+		(u'tab0'                         , 'headline'): _("Game start"),
 		},
 
 	'place_building.xml' : {
-		(u'headline'                     , 'text'    ): _("Build"),
 		(u'running_costs_label'          , 'text'    ): _("Running costs:"),
 		},
 
 	'related_buildings.xml' : {
-		(u'headline'                     , 'text'    ): _("Related buildings"),
+		(u'overview_buildrelated'        , 'headline'): _("Related buildings"),
 		},
 
 	'city_info.xml' : {
@@ -161,11 +161,10 @@ def set_translations():
 		},
 
 	'island_inventory.xml' : {
-		(u'headline'                     , 'text'    ): _("Settlement inventory"),
+		(u'island_inventory'             , 'headline'): _("Settlement inventory"),
 		},
 
 	'mainsquare_inhabitants.xml' : {
-		(u'headline'                     , 'text'    ): _("Settler overview"),
 		(u'headline_happiness_per_house' , 'text'    ): _("Happiness per house"),
 		(u'headline_residents_per_house' , 'text'    ): _("Residents per house"),
 		(u'headline_residents_total'     , 'text'    ): _("Summary"),
@@ -188,19 +187,16 @@ def set_translations():
 	'overview_enemybuilding.xml' : {
 		},
 
-	'overview_enemyunit.xml' : {
-		},
-
 	'overview_enemywarehouse.xml' : {
 		(u'buying_label'                 , 'text'    ): _("Buying"),
 		(u'selling_label'                , 'text'    ): _("Selling"),
 		},
 
 	'overview_firestation.xml' : {
-		(u'headline'                     , 'text'    ): _("Building overview"),
 		(u'name_label'                   , 'text'    ): _("Name:"),
 		(u'running_costs_label'          , 'helptext'): _("Running costs"),
 		(u'running_costs'                , 'helptext'): _("Running costs"),
+		(u'overview_firestation'         , 'headline'): _("Building overview"),
 		},
 
 	'overview_groundunit.xml' : {
@@ -215,9 +211,9 @@ def set_translations():
 		},
 
 	'overview_resourcedeposit.xml' : {
-		(u'headline'                     , 'text'    ): _("Resource deposit"),
 		(u'res_dep_description_lbl'      , 'text'    ): _("This is a resource deposit where you can build a mine to dig up resources."),
 		(u'res_dep_description_lbl2'     , 'text'    ): _("It contains these resources:"),
+		(u'overview_resourcedeposit'     , 'headline'): _("Resource deposit"),
 		},
 
 	'overview_settler.xml' : {
@@ -247,14 +243,6 @@ def set_translations():
 		(u'trader_description_lbl'       , 'text'    ): _("This is the free trader's ship. It will visit you from time to time to buy or sell goods."),
 		},
 
-	'overview_warehouse.xml' : {
-		(u'name_label'                   , 'text'    ): _("Name:"),
-		(u'collector_utilization_label'  , 'helptext'): _("Collector utilization"),
-		(u'running_costs_label'          , 'helptext'): _("Running costs"),
-		(u'collector_utilization'        , 'helptext'): _("Collector utilization"),
-		(u'running_costs'                , 'helptext'): _("Running costs"),
-		},
-
 	'overviewtab.xml' : {
 		},
 
@@ -279,18 +267,18 @@ def set_translations():
 	'tradetab.xml' : {
 		(u'buying_label'                 , 'text'    ): _("Buying"),
 		(u'exchange_label'               , 'text'    ): _("Exchange:"),
-		(u'headline'                     , 'text'    ): _("Trade"),
 		(u'selling_label'                , 'text'    ): _("Selling"),
 		(u'ship_label'                   , 'text'    ): _("Ship:"),
 		(u'trade_with_label'             , 'text'    ): _("Trade partner:"),
+		(u'buy_sell_goods'               , 'headline'): _("Trade"),
 		},
 
 	'tab_base.xml' : {
 		},
 
 	'buysellmenu.xml' : {
-		(u'headline'                     , 'text'    ): _("Buy or sell resources"),
 		(u'headline_trade_history'       , 'text'    ): _("Trade history"),
+		(u'buysellmenu'                  , 'headline'): _("Buy or sell resources"),
 		},
 
 	'select_trade_resource.xml' : {
@@ -305,7 +293,9 @@ def set_translations():
 		(u'running_costs_label'          , 'text'    ): _("Running costs"),
 		(u'sell_income_label'            , 'text'    ): _("Sale"),
 		(u'taxes_label'                  , 'text'    ): _("Taxes"),
+		(u'collector_utilization_label'  , 'helptext'): _("Collector utilization"),
 		(u'show_production_overview'     , 'helptext'): _("Show resources produced in this settlement"),
+		(u'collector_utilization'        , 'helptext'): _("Collector utilization"),
 		},
 
 	'trade_single_slot.xml' : {
